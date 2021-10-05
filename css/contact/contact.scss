@@ -1,0 +1,42 @@
+@import "../main/main.scss";
+
+.wpcf7 {
+  height: fit-content;
+  width: 100%;
+  max-width: 650px;
+  margin-top: 70px;
+
+  .wpcf7-form {
+    .contact__form__input,
+    .contact__form__submit {
+      outline: none;
+      background-color: $blue__secondary;
+      padding: 10px;
+      transition: 0.2s;
+      width: 100%;
+      font-size: 1rem;
+      border: none;
+    }
+
+    .contact__form__textarea {
+      height: 250px !important;
+    }
+
+    .contact__form__submit {
+      background-color: $light__secondary;
+      color: #000000;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact__form__submit:hover {
+      background-color: $light__primary;
+    }
+
+    p:nth-last-child(2) {
+      margin: 0;
+      height: 44px;
+    }
+  }
+}

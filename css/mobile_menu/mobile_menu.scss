@@ -1,0 +1,148 @@
+@import "../main/main.scss";
+
+//MENU MEDIA QUERIES
+
+@media (max-width: 1000px) {
+  .header {
+    height: 130px;
+    max-width: 100vw;
+    flex-direction: column-reverse;
+    justify-content: center !important;
+    position: relative;
+
+    .social__media__links {
+      margin: 15px 0;
+    }
+
+    .nav {
+      display: inline;
+
+      .logo__link {
+        .logo__image {
+          max-width: 290px;
+          padding: 15px 0;
+          border-bottom: 1px solid $light__secondary;
+        }
+      }
+      .top__bar {
+        background-color: $blue__secondary;
+        flex-direction: column;
+        position: absolute;
+        top: calc(100% + 60px);
+        left: 100%;
+        width: 100%;
+        padding: 0;
+        border: none;
+        transition: 0.2s;
+        padding: 20px 0;
+
+        li {
+          margin: 20px 0;
+          text-align: center;
+
+          a {
+            font-size: 1.2rem;
+            color: $light__primary;
+          }
+        }
+      }
+    }
+
+    .search__form {
+      display: none;
+    }
+  }
+
+  .hamburger__bar {
+    width: 100%;
+    height: 60px;
+    background-color: $blue__secondary;
+    border-top: 1px solid #424242;
+    border-bottom: 1px solid #424242;
+
+    .hamburger {
+      cursor: pointer;
+      width: 36px;
+      height: 32px;
+      position: relative;
+
+      .one,
+      .two,
+      .three {
+        width: 100%;
+        height: 2px;
+        background-color: $light__primary;
+        position: absolute;
+        top: 0;
+        animation: 0.3s linear forwards;
+      }
+
+      .two {
+        top: 15px;
+      }
+
+      .three {
+        top: 30px;
+      }
+    }
+  }
+}
+
+//HAMBURGER ANIMATION
+
+@keyframes oneShow {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 15px;
+    transform: rotate(45deg);
+  }
+}
+@keyframes twoShow {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg);
+  }
+}
+@keyframes threeShow {
+  from {
+    top: 30px;
+  }
+  to {
+    top: 15px;
+    transform: rotate(-45deg);
+  }
+}
+/*---------------------------------------*/
+
+@keyframes oneHide {
+  from {
+    top: 15px;
+    transform: rotate(45deg);
+  }
+  to {
+    top: 0px;
+    transform: rotate(0);
+  }
+}
+@keyframes twoHide {
+  from {
+    transform: rotate(-45deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+@keyframes threeHide {
+  from {
+    top: 15px;
+    transform: rotate(-45deg);
+  }
+  to {
+    top: 30px;
+    transform: rotate(0);
+  }
+}

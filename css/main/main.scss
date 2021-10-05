@@ -1,0 +1,264 @@
+/*THIS FILE ONLY CONTAINS GENERAL STYLES FOR MY CUTOM LAYOUT. 
+ALL THE DETAILED STYLES ARE IN INDIVIDUAL FILES
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap");
+
+//COLORS
+
+$blue__primary: #253143;
+$blue__secondary: #1e2837;
+$light__primary: #fefefe;
+$light__secondary: #c9c9c9;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $light__primary;
+  scroll-behavior: smooth;
+
+  //CUSTOM SCROLLBAR
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $light__secondary;
+    outline: 1px solid $blue__secondary;
+  }
+  //-----------------------------------
+}
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background-color: $blue__primary;
+  font-family: "Raleway", sans-serif;
+  position: relative;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 1920px;
+}
+
+.flex__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+
+  button {
+    width: 145px;
+    height: 40px;
+    border: 1px solid $light__primary;
+    color: $light__primary;
+    text-transform: uppercase;
+    transition: 0.2s;
+    letter-spacing: 2px;
+    background-color: rgba($color: #000000, $alpha: 0);
+  }
+
+  button:hover {
+    border: 1px solid $light__secondary;
+    color: $light__secondary;
+  }
+}
+
+//WRAPPER FOR OTHER SECTIONS
+
+.container {
+  padding: 0;
+}
+
+//PAGE TITLE
+.page__title__background {
+  background-image: url("../../images/page_title_background.png");
+  text-align: center;
+  height: 120px;
+  margin-bottom: 80px;
+
+  h1 {
+    color: $light__primary;
+    margin: 0;
+    font-weight: 400;
+  }
+}
+
+.page__content {
+  height: auto;
+}
+//SIDEBARS
+
+.sidebar__column {
+  max-width: 300px;
+  margin: 0px 100px 0 0;
+
+  .about__me__short {
+    background-color: $blue__secondary;
+    max-width: 300px;
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding: 30px 5px;
+
+    img {
+      border-radius: 50%;
+    }
+
+    h5 {
+      margin: 20px 0;
+    }
+
+    p {
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  .sidebar {
+    background-color: $blue__secondary;
+    width: 100%;
+    padding: 15px;
+    position: static;
+
+    h4 {
+      margin-top: 10px;
+    }
+
+    aside:nth-child(2) {
+      a {
+        text-transform: lowercase;
+      }
+    }
+
+    aside:nth-child(3) {
+      h4 {
+        margin-top: 10px;
+      }
+    }
+
+    ul {
+      margin: 10px 0 0 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    li,
+    a {
+      margin: 0;
+    }
+
+    li {
+      padding: 10px 0;
+    }
+
+    a {
+      color: $light__secondary;
+      font-size: 1rem !important;
+    }
+    a:hover {
+      color: $light__primary;
+    }
+
+    .wp-block-tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 10px 0 0 0;
+    }
+    .tag-cloud-link {
+      margin: 5px 5px 0 0;
+    }
+  }
+}
+
+.page__title__background {
+  h2 {
+    margin: 0;
+
+    a {
+      font-size: 2.5rem;
+      letter-spacing: 0;
+      font-weight: 400;
+    }
+  }
+}
+
+.post__category__bar {
+  margin-bottom: 20px;
+  transition: 0.2s;
+
+  a {
+    text-decoration: underline;
+    color: $light__secondary;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  a:hover {
+    color: $light__primary;
+  }
+
+  a:first-child {
+    display: none;
+  }
+}
+
+.previous__next__post {
+  width: 100%;
+  flex-wrap: wrap;
+
+  .prev,
+  .next {
+    width: 100%;
+    max-width: 380px;
+    flex-direction: column;
+    margin: 50px 0;
+    padding: 20px 10px;
+
+    p {
+      margin: 0 0 15px 0;
+      color: $light__secondary;
+      text-align: center;
+    }
+
+    p:last-child {
+      margin: 0;
+    }
+
+    a {
+      transition: 0.2s;
+      color: $light__primary;
+      font-size: 1.3rem;
+      padding: 5px;
+    }
+
+    a:hover {
+      color: $light__secondary;
+    }
+  }
+}
+
+@media (max-width: 1077px) {
+  .sidebar__column {
+    margin: 30px 0 50px 0;
+  }
+}
